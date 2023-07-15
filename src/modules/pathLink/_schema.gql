@@ -1,0 +1,25 @@
+type Query {
+  pathLinks: [PathLink!]!
+  pathLink(id: ID!): PathLink!
+}
+
+type Mutation {
+  createPathLink(input: CreatePathLinkInput!): PathLink!
+  updatePathLink(id: ID!, input: UpdatePathLinkInput!): PathLink!
+  removePathLink(id: ID!): PathLink!
+}
+
+type PathLink{
+	path: Path!
+	linked_path: Path!
+}
+
+input CreatePathLinkInput {
+  path: Int!
+  linked_path: Int!
+}
+
+input UpdatePathLinkInput {
+  path: Int
+  linked_path: Int
+}

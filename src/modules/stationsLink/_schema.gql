@@ -1,0 +1,25 @@
+type Query {
+  stationLinks: [StationLink!]!
+  stationLink(id: ID!): StationLink!
+}
+
+type Mutation {
+  createStationLink(input: CreateStationLinkInput!): StationLink!
+  updateStationLink(id: ID!, input: UpdateStationLinkInput!): StationLink!
+  removeStationLink(id: ID!): StationLink!
+}
+
+type StationLink {
+  station: Station!
+  linked_station: Station!
+}
+
+input CreateStationLinkInput {
+  station: Int!
+  linked_station: Int!
+}
+
+input UpdateStationLinkInput {
+  station: Int
+  linked_station: Int
+}
